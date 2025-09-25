@@ -139,9 +139,10 @@ def test_model(model, device, test_loader, criterion):
 def visualize_predictions(model, device, test_loader, num_samples=8):
     model.eval()
 
-    data_iter = iter(test_loader)
-    images, labels = next(data_iter)
-
+    data_iter = iter(test_loader)#iter() 是Python的内置函数，用于创建迭代器对象,将可迭代对象（如列表、元组、字符串、DataLoader等）转换为迭代器
+                                   #迭代器是一个可以逐个返回元素的对象，通常用于遍历数据集中的每个样本
+    images, labels = next(data_iter)#next() 是Python的内置函数，用于从迭代器中获取下一个元素
+    
     images = images[:num_samples]
     labels = labels[:num_samples]
 
